@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{%static 'style.css' %}">
+  <title>HOME</title>
+</head>
+<body>
+  <div class="kontajner">
+    <header>
+      <div class="slogan">
+        <h1 class="display-1">You Bring Data</h1>
+        <h2 class="display-3">We Bring Results</h2>
+      </div>
+      <div class="login">
+        <a class="display-4" href="{% url 'login' %}">login</a>
+        <a class="display-4" href="{% url 'register' %}">sign up</a>
+      </div>
+      <p>Automatized Data Analysis</p>
+    </header>
+
+    <main>
+
+    </main>
+
+  </div>
+
+
+
+
+</body>
+</html>

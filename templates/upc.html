@@ -1,0 +1,25 @@
+{% extends 'model.html' %}
+{% load static %}
+
+{% block title %}
+Upper Confidence Bound
+{% endblock %}
+
+{% block list %}
+<p>Tento model vám zo skupiny reklám ukáže, ktorá reklama bude mať najviac kliknutí.</p>
+<ul>
+    <li>.csv súbor</li>
+    <li>stĺpce obsahujúce názvy reklám</li>
+    <li>riadky obsahujúce 0 - nekliknutá reklama a 1 - kliknutá reklama</li>
+    <li>minimálne 100 zákazníkov</li>
+    <li>maximum nie je ustanovený</li>
+</ul>
+{% endblock%}
+
+{% block model %}action="{% url "ucb" %}"{% endblock %}
+
+{% block model_output %}
+        {% if plot_div %}
+        {{ plot_div | safe }}
+        {% endif %}
+{% endblock %}

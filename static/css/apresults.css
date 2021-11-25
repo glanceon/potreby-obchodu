@@ -1,0 +1,53 @@
+th:first-child{
+    display: none !important;
+}
+
+.content{
+    flex: 0;
+    margin-top: 20px;
+    display: flex;
+    max-width: 1366px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.apriori{
+    flex: 0;
+    min-width: 580px;
+}
+
+table{
+    max-width: 600px;
+}
+
+.help{
+    font-family: 'Nanum Gothic', sans-serif;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.help h1, .help h2{
+    font-size: large;
+    font-weight: bold;
+}
+
+.help h1{
+    font-size: 1.5em;
+}
+
+.help h2{
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.result p{
+    font-size: 21px;
+    font-weight: 500;
+}

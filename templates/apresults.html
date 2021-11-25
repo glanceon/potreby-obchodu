@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/df_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/apresults.css' %}">
+<div class="row content">
+    <div class="col-md-6 help">
+        <div class="meta-info">
+            <h1>Analýza Súboru: <span class="green">{{ filename }}</span> (Model Apriori)</h1>
+        </div>
+        <div class="result info">
+            <h2>Popis Analýzy</h2>
+            <p><span class="green">Dvojice s najväčšiou hodnotou "Lift" sú najčastejšie.</span></p>
+            <p>Hodnota <span class="green">Lift</span> (viac je lepšie) znamená x-násobná pravdepodobnosť, že sa kúpi práve táto dvojica ako iba samotný produkt v stĺpcy <span class="green">Left Hand Side</span></p>
+        </div>    
+        <div class="result usage">
+            <h2>Využitie</h2>
+            <p>Podľa najčastejších dvojíc viete čo pravdepodobne bude chcieť zákazník kúpiť, zhliadnuť, a tak ďalej!</p> 
+            <p>Napríklad viete zakazníkovi odporúčiť následujúci film na základe predošlých zhliadnutých filmov. Taktiež môžete vo vlastnom obchode zmeniť usporiadanie produktov, tak aby boli páry čo najďalej od seba. Záleží len na vašej predstave.  </p>
+        </div>
+    </div>
+    <div class="col-md-6 apriori">
+        {{ table | safe }}
+    </div>
+</div>
+
+{% endblock %}

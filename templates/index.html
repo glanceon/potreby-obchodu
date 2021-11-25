@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+      <div class="home-content">
+            <div class="content-block">
+
+                  <h1 class="home-title">Chcete vedieť ako je na tom váš obchod?</h1>
+                  <a class="btn" href="/prepare"><button>Zistiť Viac</button></a>
+
+            </div>
+      </div>
+      <div class="home-info">
+            <div class="info-block">
+                  <h1 class="info-title">Ako to funguje?</h1>
+                  <div class="info-desc">
+                        <h2>Na <a href="/prepare">Analýze</a> si zvolíte model analýzy, ďalej následujete kroky, a model vám ihneď vráti analýzu, ktorú si môžete stiahnuť do súboru pdf.</h2>
+                        <h2>A modely neustále pribúdajú</h2>
+                  </div>
+            </div>
+      </div>
+      <div class="home-goodbye">
+            <div class="goodbye-block">
+                  <h1 class="goodbye-title">Nenašli ste čo hľadáte?</h1>
+                  <div class="goodbye-desc">
+                        <h2>Pošlite nám súbor v tvare .csv <a href="/prepare"><nobr>na odkaz</nobr></a> a my vám do doby 7 dní odošleme na váš email plnú analýzu.</h2>
+                  </div>
+            </div>
+      </div>
+{% endblock %}

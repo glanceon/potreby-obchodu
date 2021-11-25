@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+  {% if request.method != "POST" %}
+<link rel="stylesheet" href="{% static 'css/model.css' %}">
+<div class="content">
+  <div class="dynamic row">
+      <div class="model_requirements col-md-7">
+        <h1>{% block title %} {% endblock %}</h1>
+        <div class="list">
+          {% block list %}
+          {% endblock %}
+        </div>
+      </div>
+      <div class="form col-md-5">
+        <h1>Priložte súbor</h1>
+        <form method="POST" {% block model %}{% endblock %} enctype="multipart/form-data"> 
+          {% csrf_token %}
+          {{form}}
+          <input class="uploadbtn" type="submit" value="Nahrať">
+        </form>
+      </div>
+  </div>
+</div>
+  {% endif %}
+
+  {% if request.method == "POST" %}
+
+    {% block model_output %}
+        
+    {% endblock %}
+
+  {% endif %}
+
+
+
+
+{% endblock %}

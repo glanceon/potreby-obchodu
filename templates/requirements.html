@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/requirements.css' %}">
+<div class="content row">
+  <div class="quick col-md-8">
+    <h1>Vyberte Model</h1>
+      <div class="models">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/apriori.jpg' %}" class="card-img-top" alt="Apriori">
+          <div class="card-body">
+            <h5 class="card-title">Apriori</h5>
+            <p class="card-text">
+              <ul class="tags">
+                Označenia: 
+                <li class="bg-secondary text-white tag">Produkty</li>
+                <li class="bg-secondary text-white tag">Filmy</li>
+              </ul>
+            </p>
+            <p class="card-text">Tneto model vám pomôže nájsť dvojice filmov, produktov, ktoré sú navzájom prepojené</p>
+            <a href="/apriori" class="btn btn-primary">Zistiť viac</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'images/ucb.png' %}" class="card-img-top" alt="Upper Confidence Bound">
+          <div class="card-body">
+            <h5 class="card-title">Upper Confidence Bound</h5>
+            <p class="card-text"> 
+              <ul class="tags">
+                Označenia:
+                <li class="bg-secondary text-white tag">Reklamy</li>
+              </ul>
+            </p> 
+            <p class="card-text">Tento model vám zo skupiny reklám ukáže, ktorá reklama bude mať najviac kliknutí.</p>
+            <a href="/ucb" class="btn btn-primary">Zistiť viac</a>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="service col-md-4">
+    <div class="service-form">
+      <h1>Zašlite Súbor Na Analýzu</h1>
+      <div class="online-form">
+        <form method="POST" action="" enctype="multipart/form-data"> 
+          {% csrf_token %}
+          {{ serviceForm}}
+          {% if request.method != "POST" %}
+          <input class="uploadbtn" type="submit" value="Nahrať">
+          {% endif %}
+        </form>
+        {% if request.method == "POST" %}
+        <p class="success-message bg-success text-white">{{success}}</p>
+        {% endif %}
+      <p class="service-info bg-secondary text-white">Do doby 1 týždňa dostanete na váš mail plnú analýzu vášej databázy.</p>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
